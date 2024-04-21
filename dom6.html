@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM TASK 6</title>
+  </head>
+  <style>
+    h1 {
+      color: rgb(11, 11, 51);
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+    body {
+      background-color: rgb(203, 241, 64);
+    }
+    .formgroup {
+      font-size: 1.5rem;
+      border: 3px inset black;
+      background-color: rgb(8, 128, 122);
+      padding: 50px;
+      height: 450px;
+      width: 500px;
+      margin: 50px 350px;
+      border-radius: 10px;
+    }
+    button {
+      font-size: 1.5rem;
+      border-radius: 10px;
+      background-color: rgb(9, 71, 71);
+      margin: 20px;
+      padding: 10px;
+    }
+    input {
+      height: 30px;
+      width: 300px;
+      font-size: 1rem;
+    }
+  </style>
+  <body>
+    <h1>With Javascript write a simple from validation</h1>
+    <form class="formgroup">
+      <label for="name">NAME:</label>
+      <input type="text" name="name" id="name" /><br /><br />
+      <label for="age">AGE:</label>
+      <input type="tel" name="age" id="age" /><br /><br />
+      <label for="email">EMAIL:</label>
+      <input type="email" name="email" id="email" /><br /><br />
+      <label for="pincode">PINCODE:</label>
+      <input type="tel" name="pincode" id="pincode" /><br /><br />
+      <label for="state">STATE:</label>
+      <input type="text" name="state" id="state" /><br /><br />
+      <label for="country">COUNTRY:</label>
+      <input type="text" name="country" id="country" /><br /><br />
+      <span id="span" style="color: red"></span><br />
+      <button type="submit" id="submit">SUBMIT</button>
+      <button type="reset" id="reset">RESET</button>
+    </form>
+    <script>
+      document
+        .getElementsByClassName("formgroup")[0]
+        .addEventListener("submit", (ele) => {
+          ele.preventDefault();
+          const name = document.getElementById("name").value;
+          const age = document.getElementById("age").value;
+          const email = document.getElementById("email").value;
+          const pincode = document.getElementById("pincode").value;
+          const state = document.getElementById("state").value;
+          const country = document.getElementById("country").value;
+          if (
+            name === "" ||
+            age === "" ||
+            email === "" ||
+            pincode === "" ||
+            state === "" ||
+            country === ""
+          ) {
+            document.getElementById("span").innerHTML = "please fill the form";
+          } else {
+            document.getElementById("span").innerHTML = "";
+            alert("form successfully submitted");
+          }
+        });
+    </script>
+  </body>
+</html>

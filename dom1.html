@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM TASK 1</title>
+  </head>
+  <style>
+    div {
+      border: 2px solid black;
+      height: 250px;
+      width: 250px;
+      margin-left: 450px;
+      margin-top: 100px;
+    }
+    h1 {
+      color: rgb(11, 11, 51);
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
+    body {
+      background-color: rgb(203, 241, 64);
+    }
+  </style>
+  <body>
+    <h1>
+      Color a span/div element content when a user moves the mouse over the
+      element
+    </h1>
+    <div id="container"></div>
+    <script>
+      const span = document.getElementById("container");
+      span.addEventListener(
+        "mouseover",
+        () => (span.style.backgroundColor = "aqua")
+      );
+      span.addEventListener(
+        "mouseleave",
+        () => (span.style.backgroundColor = "rgb(203, 241, 64)")
+      );
+    </script>
+  </body>
+</html>
